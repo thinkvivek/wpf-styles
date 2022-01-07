@@ -1,1 +1,2 @@
-
+*.xaml linguist-detectable=true
+*.xaml linguist-language=xaml
