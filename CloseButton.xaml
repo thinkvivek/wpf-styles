@@ -1,0 +1,36 @@
+<Style x:Key="CloseButton" TargetType="{x:Type Button}">
+	<Setter Property="Template">
+		<Setter.Value>
+			<ControlTemplate TargetType="{x:Type Button}">
+				<Grid x:Name="grid" Height="25" Width="25">
+					<Rectangle Name="Rectangle" Fill="Transparent" Width="25" Height="25"></Rectangle>
+					<Path x:Name="path" Fill="DarkGray" Stretch="Fill" Stroke="White" Margin="0.072,0,0.041,0.06" Width="10" Height="10" Data="M82,167 L112,197" StrokeThickness="1.5"/>
+					<Path x:Name="path1" Fill="DarkGray" Stretch="Fill" Stroke="White" Data="M82,167 L112,197" Margin="2.763,2.652,2.736,2.847" Height="10" Width="10" RenderTransformOrigin="0.5,0.5" StrokeThickness="1.5">
+						<Path.RenderTransform>
+							<TransformGroup>
+								<ScaleTransform/>
+								<SkewTransform/>
+								<RotateTransform Angle="90"/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</Path.RenderTransform>
+					</Path>
+				</Grid>
+				<ControlTemplate.Triggers>
+					<Trigger Property="IsMouseOver" Value="True" SourceName="Rectangle">
+						<Setter Property="Fill" TargetName="path" Value="#FFFF0C0C"/>
+						<Setter Property="Fill" TargetName="path1" Value="#FFFE0000"/>
+						<Setter Property="Stroke" TargetName="path" Value="Yellow"/>
+						<Setter Property="Stroke" TargetName="path1" Value="Yellow"/>
+					</Trigger>
+					<Trigger Property="IsMouseOver" Value="True" SourceName="grid">
+						<Setter Property="Fill" TargetName="path" Value="#FFFF0C0C"/>
+						<Setter Property="Fill" TargetName="path1" Value="#FFFE0000"/>
+						<Setter Property="Stroke" TargetName="path" Value="Yellow"/>
+						<Setter Property="Stroke" TargetName="path1" Value="Yellow"/>
+					</Trigger>
+				</ControlTemplate.Triggers>
+			</ControlTemplate>
+		</Setter.Value>
+	</Setter>
+</Style>
