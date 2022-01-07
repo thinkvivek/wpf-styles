@@ -1,0 +1,36 @@
+<Style TargetType="ToolTip">
+	<Setter Property="OverridesDefaultStyle" Value="true" />
+	<Setter Property="HasDropShadow" Value="True" />
+	<Setter Property="Foreground" Value="White" />
+	<Setter Property="FontFamily" Value="Tahoma"/>
+	<Setter Property="FontSize" Value="11" />
+	<Setter Property="FontWeight" Value="Bold"/>
+	<Setter Property="Template">
+		<Setter.Value>
+			<ControlTemplate TargetType="ToolTip">
+				<Border Name="Border" BorderThickness="1,1,1,1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="0,4,4,4" BorderBrush="#2196F3">
+					<!--Change Made-->
+					<ContentPresenter Margin="10,10,10,10" MaxWidth="900" HorizontalAlignment="Center" VerticalAlignment="Center">
+						<ContentPresenter.Resources>
+							<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource WrappingStyle}"/>
+						</ContentPresenter.Resources>
+					</ContentPresenter>
+					<Border.Background>
+						<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+							<GradientStop Color="#2196F3" Offset="0.0"/>
+							<GradientStop Color="#d2e638" Offset="0.50"/>
+							<GradientStop Color="#c3d825" Offset="0.51"/>
+							<GradientStop Color="#2196F3" Offset="1.0"/>
+						</LinearGradientBrush>
+					</Border.Background>
+				</Border>
+				<ControlTemplate.Triggers>
+					<Trigger Property="HasDropShadow" Value="true">
+						<Setter TargetName="Border" Property="CornerRadius" Value="4" />
+						<Setter TargetName="Border" Property="SnapsToDevicePixels" Value="true" />
+					</Trigger>
+				</ControlTemplate.Triggers>
+			</ControlTemplate>
+		</Setter.Value>
+	</Setter>
+</Style>
